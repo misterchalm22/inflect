@@ -1768,102 +1768,14341 @@ plverb_ambiguous_non_pres = enclose(
     "|".join(("thought", "saw", "bent", "will", "might", "cut"))
 )
 
+
+class conjugator_fr(infinitive_form):
+    def __init__(self):
+
+    def indicatif(pattern, starts, ends, comp_verb='avoir'):
+        def present(pattern starts, ends, comp_verb='avoir'):
+            lst = []
+            for i in range(0, len(pattern)):
+                lst.append(str(starts[pattern[i]] + ends[i]))
+            return lst
+        def passe_compose(pattern starts, ends, comp_verb='avoir'):
+            pass
+
+
 frenchverb_irr_first = {
-    "tenir": 'TBD',
-    "s'abstenir": 'TBD',
-    "appartenir": 'TBD',
-    "contenir": 'TBD',
-    "détenir": 'TBD',
-    "entretenir": 'TBD',
-    "maintenir": 'TBD',
-    "obtenir": 'TBD',
-    "retenir": 'TBD',
-    "soutenir": 'TBD',
-    "venir": 'TBD',
-    "avenir": 'TBD',
-    "advenir": 'TBD',
-    "bienvenir": 'TBD',
-    "circonvenir": 'TBD',
-    "contrevenir": 'TBD',
-    "convenir": 'TBD',
-    "devenir": 'TBD',
-    "disconvenir": 'TBD',
-    "intervenir": 'TBD',
-    "obvenir": 'TBD',
-    "parvenir": 'TBD',
-    "prévenir": 'TBD',
-    "provenir": 'TBD',
-    "redevenir": 'TBD',
-    "se ressouvenir": 'TBD',
-    "revenir": 'TBD',
-    "se souvenir": 'TBD',
-    "subvenir": 'TBD',
-    "survenir": 'TBD',
-    "acquérir": 'TBD',
-    "conquérir": 'TBD',
-    "s'enquérir": 'TBD',
-    "quérir": 'TBD',
-    "reconquérir": 'TBD',
-    "requérir": 'TBD',
-    "sentir": 'TBD',
-    "consentir": 'TBD',
-    "pressentir": 'TBD',
-    "ressentir": 'TBD',
-    "mentir": 'TBD',
-    "démentir": 'TBD',
-    "partir": 'TBD',
-    "départir": 'TBD',
-    "repartir": 'TBD',
-    "se repentir": 'TBD',
-    "sortir": 'TBD',
-    "désassortir": 'TBD',
-    "rassortir": 'TBD',
-    "ressortir": 'TBD',
-    "vêtir": 'TBD',
-    "dévêtir": 'TBD',
-    "revêtir": 'TBD',
-    "survêtir": 'TBD',
-    "ouvrir": 'TBD',
-    "couvrir": 'TBD',
-    "découvrir": 'TBD',
-    "redécouvrir": 'TBD',
-    "recouvrir": 'TBD',
-    "entrouvrir": 'TBD',
-    "rentrouvrir": 'TBD',
-    "rouvrir": 'TBD',
-    "offrir": 'TBD',
-    "souffrir": 'TBD',
-    "cueillir": 'TBD',
-    "accueillir": 'TBD',
-    "recueillir": 'TBD',
-    "assaillir": 'TBD',
-    "saillir": 'TBD',
-    "tressaillir": 'TBD',
-    "défaillir": 'TBD',
-    "faillir": 'TBD',
-    "bouillir": 'TBD',
-    "débouillir": 'TBD',
-    "dormir": 'TBD',
-    "endormir": 'TBD',
-    "rendormir": 'TBD',
-    "courir": 'TBD',
-    "accourir": 'TBD',
-    "concourir": 'TBD',
-    "discourir": 'TBD',
-    "encourir": 'TBD',
-    "parcourir": 'TBD',
-    "recourir": 'TBD',
-    "secourir": 'TBD',
-    "mourir": 'TBD',
-    "servir": 'TBD',
-    "desservir": 'TBD',
-    "resservir": 'TBD',
-    "fuir": 'TBD',
-    "s'enfuir": 'TBD',
-    "gésir": 'TBD',
-    "racabouillir": 'TBD',
-    "issir": 'TBD',
-    "ouïr": 'TBD',
+    "tenir": {
+                'indicatif': {
+                    'présent': ([0, 0, 0, 1, 1, 2], ['tien', 'ten', 'tienn'], ['s', 's', 't', 'ons', 'ez', 'ent'])
+                    'passé composé': {  # ind avoir 111111 uuuuuu ten
+                        's1': 'tenu',
+                        's2': 'tenu',
+                        's3': 'tenu',
+                        'p1': 'tenu',
+                        'p2': 'tenu',
+                        'p3': 'tenu'
+                    },
+                    'imparfait': {  # ind 111111 aisaisaitionsiezaient ten
+                        's1': 'tenais',
+                        's2': 'tenais',
+                        's3': 'tenait',
+                        'p1': 'tenions',
+                        'p2': 'teniez',
+                        'p3': 'tenaient'
+                    },
+                    'plus-que-parfait': {  # ind avoir 111111 uuuuuu ten
+                        's1': 'tenu',
+                        's2': 'tenu',
+                        's3': 'tenu',
+                        'p1': 'tenu',
+                        'p2': 'tenu',
+                        'p3': 'tenu'
+                    },
+                    'passé simple': {  # ind 111111 sstmestesrent tin
+                        's1': '',
+                        's2': '',
+                        's3': '',
+                        'p1': '',
+                        'p2': '',
+                        'p3': ''
+                    },
+                    'passé antérieur': {  # ind avoir 111111 uuuuuu ten
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {  # ind 111111 aiasaonsezont tiendr
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {  # ind avoir 111111 uuuuuu ten
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "s'abstenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "appartenir": {
+                'indicatif': {
+                    'présent': {},
+                    'passé composé': {},
+                    'imparfait': {},
+                    'plus-que-parfait': {},
+                    'passé simple': {},
+                    'passé antérieur': {},
+                    'futur simple': {},
+                    'futur antérieur': {}
+                },
+                'subjonctif': {
+                    'présent': {},
+                    'passé': {},
+                    'imparfait': {},
+                    'plus-que-parfait': {}
+                },
+                'conditionnel': {
+                    'présent': {},
+                    'passé première forme': {},
+                    'passé deuxième forme': {},
+                },
+                'impératif': {
+                    'présent': {},
+                    'passé': {}
+                },
+                'participe': {
+                    'présent': {},
+                    'passé': {}
+                },
+                'infinitif': {
+                    'présent': {},
+                    'passé': {}
+                },
+                'gérondif': {
+                    'présent': {},
+                    'passé': {}
+                }
+             },
+    "contenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "détenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "entretenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "maintenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "obtenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "retenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "soutenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "venir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "avenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "advenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "bienvenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "circonvenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "contrevenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "convenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "devenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "disconvenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "intervenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "obvenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "parvenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "prévenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "provenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "redevenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "se ressouvenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "revenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "se souvenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "subvenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "survenir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "acquérir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "conquérir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "s'enquérir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "quérir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "reconquérir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "requérir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "sentir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "consentir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "pressentir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "ressentir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "mentir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "démentir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "partir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "départir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "repartir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "se repentir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "sortir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "désassortir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "rassortir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "ressortir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "vêtir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "dévêtir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "revêtir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "survêtir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "ouvrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "couvrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "découvrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "redécouvrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "recouvrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "entrouvrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "rentrouvrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "rouvrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "offrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "souffrir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "cueillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "accueillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "recueillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "assaillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "saillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "tressaillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "défaillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "faillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "bouillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "débouillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "dormir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "endormir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "rendormir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "courir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "accourir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "concourir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "discourir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "encourir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "parcourir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "recourir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "secourir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "mourir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "servir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "desservir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "resservir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "fuir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "s'enfuir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "gésir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "racabouillir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "issir": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
+    "ouïr": {
+                'indicatif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé composé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur simple': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'futur antérieur': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    }
+                },
+                'subjonctif': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'imparfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'plus-que-parfait': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'conditionnel': {
+                    'présent': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé première forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                    'passé deuxième forme': {
+                        's1': ,
+                        's2': ,
+                        's3': ,
+                        'p1': ,
+                        'p2': ,
+                        'p3':
+                    },
+                },
+                'impératif': {
+                    'présent': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    },
+                    'passé': {
+                        's2': ,
+                        'p1': ,
+                        'p2':
+                    }
+                },
+                'participe': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'infinitif': {
+                    'présent': '',
+                    'passé': ''
+                },
+                'gérondif': {
+                    'présent': '',
+                    'passé': ''
+                }
+             },
     "férir": 'TBD'
 }
 
