@@ -51,6 +51,7 @@ Exceptions:
 
 import ast
 import re
+from constants_fr import *
 
 try:
     import importlib.metadata as importlib_metadata
@@ -1781,71 +1782,7 @@ class conjugator_fr(infinitive_form):
         def passe_compose(pattern, starts, ends, comp_verb='avoir'):
             pass
 
-# French Conjugation Patterns for use in conjugator_fr
-f_conj_pat = [
-              [0, 0, 0, 1, 1, 2],
-              [0, 0, 0, 0, 0, 0]
-             ]
 
-frenchverb_irr_first = {
-    "tenir": {
-                'ind': (f_conj_pat[0], ['tien', 'ten', 'tienn'], ['s', 's', 't', 'ons', 'ez', 'ent']),
-                    'pc': (f_conj_pat[1], ['ten'], ['u', 'u', 'u', 'u', 'u', 'u']),
-                    'i': (f_conj_pat[1], ['ten'], ['ais', 'ais', 'ait', 'ions', 'iez', 'aient']),
-                    'pqp': (f_conj_pat[1], ['ten'], ['u', 'u', 'u', 'u', 'u', 'u']),
-                    'ps': {  # ind 111111 sstmestesrent tin
-                    },
-                    'pa': {  # ind avoir 111111 uuuuuu ten
-                    },
-                    'fs': {  # ind 111111 aiasaonsezont tiendr
-                    },
-                    'fa': {  # ind avoir 111111 uuuuuu ten
-                    }
-                },
-                'subjonctif': {
-                    'présent': {
-                   },
-                    'passé': {
-                    },
-                    'imparfait': {
-                    },
-                    'plus-que-parfait': {
-                    },
-                },
-                'conditionnel': {
-                    'présent': {
-                    },
-                    'passé première forme': {
-                    },
-                    'passé deuxième forme': {
-                    },
-                },
-                'impératif': {
-                    'présent': {
-                        's2': ,
-                        'p1': ,
-                        'p2':
-                    },
-                    'passé': {
-                        's2': ,
-                        'p1': ,
-                        'p2':
-                    }
-                },
-                'participe': {
-                    'présent': '',
-                    'passé': ''
-                },
-                'infinitif': {
-                    'présent': '',
-                    'passé': ''
-                },
-                'gérondif': {
-                    'présent': '',
-                    'passé': ''
-                }
-             }
- 
 
 # "..oes" -> "..oe" (the rest are "..oes" -> "o")
 
