@@ -1846,30 +1846,30 @@ A_ordinal_a = enclose("|".join(("[bcdgjkpqtuvwyz]-?th",)))
 # NUMERICAL INFLECTIONS
 
 nth = {
-    0: "th",
-    1: "st",
-    2: "nd",
-    3: "rd",
-    4: "th",
-    5: "th",
-    6: "th",
-    7: "th",
-    8: "th",
-    9: "th",
-    11: "th",
-    12: "th",
-    13: "th",
+    0: "ième",
+    1: "ier",
+    2: "ième",
+    3: "ième",
+    4: "ième",
+    5: "ième",
+    6: "ième",
+    7: "ième",
+    8: "ième",
+    9: "ième",
+    11: "ième",
+    12: "ième",
+    13: "ième",
 }
 
 ordinal = dict(
-    ty="tieth",
-    one="first",
-    two="second",
-    three="third",
-    five="fifth",
-    eight="eighth",
-    nine="ninth",
-    twelve="twelfth",
+    ty="ième",
+    one="premier",
+    two="deuxième",
+    three="troisième",
+    five="cinquième",
+    eight="huitième",
+    nine="neuvième",
+    twelve="douzième",
 )
 
 ordinal_suff = "|".join(list(ordinal.keys()))
@@ -1877,7 +1877,8 @@ ordinal_suff = "|".join(list(ordinal.keys()))
 
 # NUMBERS
 
-unit = ["", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf"]
+unit = ["", "un", "deux", "trois", "quatre", "cinq",
+        "six", "sept", "huit", "neuf"]
 teen = [
     "dix",
     "onze",
@@ -1971,16 +1972,15 @@ class engine:
     def __getattr__(self, meth):
         if meth in self.deprecated_methods:
             print3(
-                "{}() deprecated, use {}()".format(meth, self.deprecated_methods[meth])
+                "{}() deprecated, use {}()".format(
+                    meth, self.deprecated_methods[meth]
+                )
             )
             raise DeprecationWarning
         raise AttributeError
 
     def defnoun(self, singular, plural):
-        """
-        Set the noun plural of singular to plural.
-
-        """
+        """ Set the noun plural of singular to plural. """
         self.checkpat(singular)
         self.checkpatplural(plural)
         self.pl_sb_user_defined.extend((singular, plural))
@@ -1991,7 +1991,8 @@ class engine:
         """
         Set the verb plurals for s1, s2 and s3 to p1, p2 and p3 respectively.
 
-        Where 1, 2 and 3 represent the 1st, 2nd and 3rd person forms of the verb.
+        Where 1, 2 and 3 represent the 1st, 2nd and 3rd person 
+        forms of the verb.
 
         """
         self.checkpat(s1)
@@ -2004,37 +2005,32 @@ class engine:
         return 1
 
     def defadj(self, singular, plural):
-        """
-        Set the adjective plural of singular to plural.
-
-        """
+        """ Set the adjective plural of singular to plural. """
         self.checkpat(singular)
         self.checkpatplural(plural)
         self.pl_adj_user_defined.extend((singular, plural))
         return 1
 
     def defa(self, pattern):
-        """
-        Define the indefinate article as 'a' for words matching pattern.
-
+        """ 
+        
+        Define the indefinate article as 'a' for
+        words matching pattern.
+        
         """
         self.checkpat(pattern)
         self.A_a_user_defined.extend((pattern, "a"))
         return 1
 
     def defan(self, pattern):
-        """
-        Define the indefinate article as 'an' for words matching pattern.
+        """Define the indefinate article as 'an' for words matching pattern."""
 
-        """
         self.checkpat(pattern)
         self.A_a_user_defined.extend((pattern, "an"))
         return 1
 
     def checkpat(self, pattern):
-        """
-        check for errors in a regex pattern
-        """
+        """check for errors in a regex pattern"""
         if pattern is None:
             return
         try:
@@ -2044,9 +2040,7 @@ class engine:
             raise BadUserDefinedPatternError
 
     def checkpatplural(self, pattern):
-        """
-        check for errors in a regex replace pattern
-        """
+        """check for errors in a regex replace pattern"""
         return
 
     def ud_match(self, word, wordlist):
@@ -2063,7 +2057,7 @@ class engine:
 
     def classical(self, **kwargs):
         """
-        turn classical mode on and off for various categories
+        turn classical mode on and off for various categories.
 
         turn on all classical modes:
         classical()
@@ -2118,7 +2112,7 @@ class engine:
 
     def gender(self, gender):
         """
-        set the gender for the singular of plural pronouns
+        set the gender for the singular of plural pronouns.
 
         can be one of:
         'neuter'                ('they' -> 'it')
@@ -2134,9 +2128,8 @@ class engine:
             raise BadGenderError
 
     def _get_value_from_ast(self, obj):
-        """
-        Return the value of the ast object.
-        """
+        """Return the value of the ast object."""
+
         if isinstance(obj, ast.Num):
             return obj.n
         elif isinstance(obj, ast.Str):
@@ -2151,18 +2144,19 @@ class engine:
             return obj.value
 
         # For python versions below 3.4
-        elif isinstance(obj, ast.Name) and (obj.id in ["True", "False", "None"]):
+        elif isinstance(obj, ast.Name) and (
+                obj.id in ["True", "False", "None"]):
             return string_to_constant[obj.id]
 
         # Probably passed a variable name.
         # Or passed a single word without wrapping it in quotes as an argument
-        # ex: p.inflect("I plural(see)") instead of p.inflect("I plural('see')")
+        # ex: p.inflect("I plural(see)") instead of 
+        # p.inflect("I plural('see')")
         raise NameError("name '%s' is not defined" % obj.id)
 
     def _string_to_substitute(self, mo, methods_dict):
-        """
-        Return the string to be substituted for the match.
-        """
+        """Return the string to be substituted for the match."""
+
         matched_text, f_name = mo.groups()
         # matched_text is the complete match string. e.g. plural_noun(cat)
         # f_name is the function name. e.g. plural_noun
@@ -2268,9 +2262,9 @@ class engine:
             return text
         plural = self.postprocess(
             word,
-            self._pl_special_adjective(word, count)
-            or self._pl_special_verb(word, count)
-            or self._plnoun(word, count),
+            self._pl_special_adjective(word, count) or
+            self._pl_special_verb(word, count) or
+            self._plnoun(word, count),
         )
         return "{}{}{}".format(pre, plural, post)
 
@@ -2307,7 +2301,8 @@ class engine:
             return text
         plural = self.postprocess(
             word,
-            self._pl_special_verb(word, count) or self._pl_general_verb(word, count),
+            self._pl_special_verb(word, count) or
+            self._pl_general_verb(word, count)
         )
         return "{}{}{}".format(pre, plural, post)
 
@@ -2325,12 +2320,14 @@ class engine:
         pre, word, post = self.partition_word(text)
         if not word:
             return text
-        plural = self.postprocess(word, self._pl_special_adjective(word, count) or word)
+        plural = self.postprocess(
+            word, self._pl_special_adjective(word, count) or word
+        )
         return "{}{}{}".format(pre, plural, post)
 
     def compare(self, word1, word2):
         """
-        compare word1 and word2 for equality regardless of plurality
+        Compare word1 and word2 for equality regardless of plurality.
 
         return values:
         eq - the strings are equal
@@ -2341,14 +2338,15 @@ class engine:
 
         """
         return (
-            self._plequal(word1, word2, self.plural_noun)
-            or self._plequal(word1, word2, self.plural_verb)
-            or self._plequal(word1, word2, self.plural_adj)
+            self._plequal(word1, word2, self.plural_noun) or
+            self._plequal(word1, word2, self.plural_verb) or
+            self._plequal(word1, word2, self.plural_adj)
         )
 
     def compare_nouns(self, word1, word2):
         """
-        compare word1 and word2 for equality regardless of plurality
+        Compare word1 and word2 for equality regardless of plurality.
+
         word1 and word2 are to be treated as nouns
 
         return values:
@@ -2363,7 +2361,8 @@ class engine:
 
     def compare_verbs(self, word1, word2):
         """
-        compare word1 and word2 for equality regardless of plurality
+        Compare word1 and word2 for equality regardless of plurality.
+
         word1 and word2 are to be treated as verbs
 
         return values:
@@ -2378,7 +2377,8 @@ class engine:
 
     def compare_adjs(self, word1, word2):
         """
-        compare word1 and word2 for equality regardless of plurality
+        Compare word1 and word2 for equality regardless of plurality.
+
         word1 and word2 are to be treated as adjectives
 
         return values:
@@ -2440,7 +2440,9 @@ class engine:
         return False
 
     def _pl_reg_plurals(self, pair, stems, end1, end2):
-        pattern = r"({})({}\|\1{}|{}\|\1{})".format(stems, end1, end2, end2, end1)
+        pattern = r"({})({}\|\1{}|{}\|\1{})".format(
+            stems, end1, end2, end2, end1
+        )
         return bool(re.search(pattern, pair))
 
     def _pl_check_plurals_N(self, word1, word2):
@@ -2467,10 +2469,10 @@ class engine:
         pair = "|".join(word.last for word in words)
 
         return (
-            pair in pl_sb_irregular_s.values()
-            or pair in pl_sb_irregular.values()
-            or pair in pl_sb_irregular_caps.values()
-            or any(
+            pair in pl_sb_irregular_s.values() or
+            pair in pl_sb_irregular.values() or
+            pair in pl_sb_irregular_caps.values() or
+            any(
                 self._pl_reg_plurals(pair, stems, end1, end2)
                 for stems, end1, end2 in stem_endings
             )
@@ -2481,11 +2483,10 @@ class engine:
         word2a = word2[: word2.rfind("'")] if word2.endswith(("'s", "'")) else ""
 
         return (
-            word1a
-            and word2a
-            and (
-                self._pl_check_plurals_N(word1a, word2a)
-                or self._pl_check_plurals_N(word2a, word1a)
+            word1a and
+            word2a and (
+                self._pl_check_plurals_N(word1a, word2a) or
+                self._pl_check_plurals_N(word2a, word1a)
             )
         )
 
@@ -3633,13 +3634,13 @@ class engine:
         num,
         wantlist=False,
         group=0,
-        comma=",",
-        andword="and",
-        zero="zero",
-        one="one",
+        comma="\xa0",
+        andword="",
+        zero="zéro",
+        one="un",
         decimal="point",
         threshold=None,
-    ):
+        ):
         """
         Return a number in words.
 
@@ -3675,11 +3676,11 @@ class engine:
         if nowhite[0] == "+":
             sign = "plus"
         elif nowhite[0] == "-":
-            sign = "minus"
+            sign = "moins"
         else:
             sign = ""
 
-        myord = num[-2:] in ("st", "nd", "rd", "th")
+        myord = num[-2:] in ("ième", "ième", "ième", "ième")
         if myord:
             num = num[:-2]
         finalpoint = False
@@ -3739,7 +3740,7 @@ class engine:
                     r"(%s)\Z" % ordinal_suff, ordinal[mo.group(1)], numchunks[-1]
                 )
             else:
-                numchunks[-1] += "th"
+                numchunks[-1] += "ième"
 
         for chunk in chunks[1:]:
             numchunks.append(decimal)
